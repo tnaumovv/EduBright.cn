@@ -37,3 +37,14 @@ h1, h2, h3, p { margin-top: 0; }.home-hero { min-height: 695px; display: flex; a
   .header .menu-toggle { display: none !important; }
   .home-hero { padding-top: 153px; }
 }
+
+/* Keep each primary screen within one viewport before the next section begins. */
+.hero-backdrop { height: 100svh; }
+.home-hero { min-height: calc(100svh - 108px); }
+.university-section,
+.services-section { min-height: 100svh; }
+
+@media (max-width: 720px) {
+  .hero-backdrop { height: 100svh; }
+  .home-hero { min-height: 100svh; }
+}
