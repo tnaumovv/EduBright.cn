@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import {
   CheckCircle2,
   ClipboardPenLine,
@@ -198,14 +198,34 @@ function FoundersSection() {
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [headerVisible, setHeaderVisible] = useState(true)
+  const lastScrollY = useRef(0)
   const scrollToForm = () => document.getElementById('consultation')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   const closeMenu = () => setMenuOpen(false)
   const handleConsultationClick = () => { closeMenu(); scrollToForm() }
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+      if (currentScrollY <= 20) {
+        setHeaderVisible(true)
+      } else if (currentScrollY > lastScrollY.current + 4) {
+        setHeaderVisible(false)
+        setMenuOpen(false)
+      } else if (currentScrollY < lastScrollY.current - 4) {
+        setHeaderVisible(true)
+      }
+      lastScrollY.current = currentScrollY
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
     <main className="site site--home">
       <div className="hero-backdrop" />
-      <header className="header container">
+      <header className={`header container ${headerVisible ? 'header--visible' : 'header--hidden'}`}>
         <a className="brand" href="/" aria-label="EduBright — главная"><img src="/assets/edubright-logo.png" alt="EduBright" /></a>
         <nav className={`navigation ${menuOpen ? 'open' : ''}`} aria-label="Основная навигация">
           {navigation.map((item) => <a key={item.href} href={`#${item.href === '/' ? 'home' : item.href.slice(1)}`} onClick={closeMenu}>{item.label}</a>)}
