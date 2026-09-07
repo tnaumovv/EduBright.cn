@@ -3,11 +3,8 @@ import {
   CheckCircle2,
   ClipboardPenLine,
   FileCheck2,
-  Globe2,
-  GraduationCap,
   Headphones,
   Landmark,
-  Languages,
   Mail,
   MessageCircle,
   Menu,
@@ -21,7 +18,6 @@ const navigation = [
   { href: '/', label: 'Главная' },
   { href: '/universities', label: 'Университеты' },
   { href: '/services', label: 'Услуги' },
-  { href: '/founders', label: 'Основатели' },
 ]
 
 const services = [
@@ -129,73 +125,6 @@ function ServicesSection() {
   </section>
 }
 
-function FoundersSection() {
-  return (
-    <section className="founders-section" id="founders" aria-labelledby="founders-title">
-      <div className="container">
-        <div className="founders-heading">
-          <div>
-            <p className="section-kicker">Люди за EduBright</p>
-            <h2 id="founders-title">Знакомьтесь с<br /><span>основателями</span></h2>
-          </div>
-          <p>Мы сами прошли путь поступления и учёбы в Китае — поэтому помогаем студентам уверенно идти своим.</p>
-        </div>
-
-        <article className="founder-profile">
-          <div className="founder-photo-wrap">
-            <img className="founder-photo" src="/assets/boden-darezhan.jpeg" alt="Боден Дарежан" />
-            <div className="founder-photo-caption"><span>China · Education</span><strong>EduBright.cn</strong></div>
-          </div>
-
-          <div className="founder-content">
-            <p className="founder-role">Основатель EduBright.cn</p>
-            <h3>Боден<br /><span>Дарежан</span></h3>
-            <p className="founder-lead">Помогает студентам превратить поступление в Китай из сложной задачи в <strong>понятный маршрут.</strong></p>
-
-            <div className="founder-facts" aria-label="Ключевой опыт Бодена Дарежана">
-              <div><span className="fact-icon"><Globe2 size={18} /></span><b>3+ года</b><small>в образовании Китая</small></div>
-              <div><span className="fact-icon"><Languages size={18} /></span><b>2+ года</b><small>преподавания китайского и HSK</small></div>
-              <div><span className="fact-icon"><GraduationCap size={18} /></span><b>Личный опыт</b><small>учёбы и адаптации в Китае</small></div>
-            </div>
-
-            <div className="founder-bio">
-              <p>Более 3 лет работаю в сфере образования в Китае и занимаюсь сопровождением студентов при поступлении в китайские университеты. Имею практический опыт работы с образовательными программами, подготовкой документов и взаимодействием с университетами Китая.</p>
-              <p>Более 2 лет преподаю китайский язык и занимаюсь подготовкой студентов к HSK. Проходил языковое и академическое обучение в Китае, благодаря чему знаком с системой образования не только профессионально, но и на личном опыте.</p>
-              <p>В настоящее время обучаюсь по направлению <strong>International Economics and Trade.</strong> Специализируюсь на вопросах поступления, обучения и адаптации иностранных студентов в Китае.</p>
-              <p>Являюсь основателем образовательного проекта <strong>EduBright.cn.</strong></p>
-            </div>
-          </div>
-        </article>
-
-        <article className="founder-profile founder-profile--second">
-          <div className="founder-photo-wrap">
-            <img className="founder-photo founder-photo--ryana" src="/assets/ryana-bakirova.jpeg" alt="Абакирова Райана" />
-            <div className="founder-photo-caption"><span>Hangzhou · China</span><strong>EduBright.cn</strong></div>
-          </div>
-
-          <div className="founder-content">
-            <p className="founder-role">Со-руководитель EduBright</p>
-            <h3>Абакирова<br /><span>Райана</span></h3>
-            <p className="founder-lead">Помогает студентам разобраться в китайском образовании и уверенно начать <strong>свой путь в Китае.</strong></p>
-
-            <div className="founder-facts" aria-label="Ключевой опыт Абакировой Райаны">
-              <div><span className="fact-icon"><Globe2 size={18} /></span><b>Ханчжоу</b><small>год языковой подготовки</small></div>
-              <div><span className="fact-icon"><Languages size={18} /></span><b>1+ год</b><small>преподавания китайского языка</small></div>
-              <div><span className="fact-icon"><GraduationCap size={18} /></span><b>Chinese Business</b><small>бакалавриат на китайском языке</small></div>
-            </div>
-
-            <div className="founder-bio">
-              <p>Работаю в сфере китайского языка, международного образования и сопровождения студентов при поступлении в университеты Китая. Прошла годовую языковую подготовку в городе Ханчжоу.</p>
-              <p>В настоящее время обучаюсь на китайском языке по программе <strong>Chinese Business.</strong> Имею практический опыт подбора образовательных программ, подготовки документов, взаимодействия с китайскими университетами и визового сопровождения студентов.</p>
-              <p>Более года преподаю китайский язык. Являюсь со-руководителем образовательного проекта <strong>EduBright,</strong> специализирующегося на поступлении и сопровождении иностранных студентов в Китае.</p>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-  )
-}
-
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [headerVisible, setHeaderVisible] = useState(true)
@@ -237,7 +166,6 @@ export default function App() {
       <HomePage />
       <UniversitiesSection />
       <ServicesSection />
-      <FoundersSection />
       <ConsultationForm />
       <footer className="footer container">© {new Date().getFullYear()} EduBright. Помогаем учиться в Китае.</footer>
     </main>
