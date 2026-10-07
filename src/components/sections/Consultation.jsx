@@ -1,6 +1,7 @@
 import { ArrowUpRight, MessagesSquare, GraduationCap } from 'lucide-react'
 import ConsultationForm from '../ConsultationForm'
 import Reveal from '../ui/Reveal'
+import SectionBackdrop from '../SectionBackdrop'
 
 export default function Consultation() {
   return (
@@ -13,6 +14,7 @@ export default function Consultation() {
         <span />
         <span />
       </div>
+      <SectionBackdrop variant="consultation" />
       <div className="container consultation-layout">
         <div className="consultation-copy">
           <Reveal>

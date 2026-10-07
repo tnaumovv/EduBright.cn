@@ -14,9 +14,11 @@ export default function Footer() {
         </div>
         <nav className="footer-nav" aria-label="Дополнительная навигация">
           <span className="footer-label">Ваш путь</span>
-          <a href="#universities">Направления обучения</a>
-          <a href="#services">Этапы сопровождения</a>
-          <a href="#consultation">Консультация</a>
+          <div className="footer-links">
+            <a href="#universities">Направления обучения</a>
+            <a href="#services">Этапы сопровождения</a>
+            <a href="#consultation">Консультация</a>
+          </div>
         </nav>
         <div className="footer-social">
           <span className="footer-label">Будем на связи</span>

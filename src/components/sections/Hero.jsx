@@ -1,6 +1,7 @@
 import { ArrowDown, GraduationCap, Languages, Compass } from 'lucide-react'
 import Button from '../ui/Button'
 import Reveal from '../ui/Reveal'
+import SectionBackdrop from '../SectionBackdrop'
 
 export default function Hero() {
   return (
@@ -11,10 +12,10 @@ export default function Hero() {
     >
       <div className="hero-architecture" aria-hidden="true">
         <img
-          src="/assets/program-chinese.webp"
+          src="/assets/hero-palace.webp"
           alt=""
-          width="1200"
-          height="1200"
+          width="1672"
+          height="941"
           fetchpriority="high"
         />
       </div>
@@ -24,6 +25,7 @@ export default function Hero() {
         <span className="hero-dot" />
         <span className="hero-character">学</span>
       </div>
+      <SectionBackdrop variant="hero" />
       <div className="container hero-content">
         <Reveal>
           <p className="eyebrow hero-eyebrow">

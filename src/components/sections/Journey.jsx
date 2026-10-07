@@ -3,6 +3,7 @@ import * as Tabs from '@radix-ui/react-tabs'
 import { ArrowUpRight, Check } from 'lucide-react'
 import { journeySteps } from '../../data/content'
 import Reveal from '../ui/Reveal'
+import SectionBackdrop from '../SectionBackdrop'
 
 export default function Journey() {
   const [step, setStep] = useState(journeySteps[0].id)
@@ -12,6 +13,7 @@ export default function Journey() {
       id="services"
       aria-labelledby="journey-title"
     >
+      <SectionBackdrop variant="journey" />
       <div className="container">
         <Reveal className="section-heading">
           <div>

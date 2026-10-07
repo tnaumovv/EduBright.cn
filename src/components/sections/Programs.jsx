@@ -3,6 +3,7 @@ import { programs, universityPaths } from '../../data/content'
 import Button from '../ui/Button'
 import Reveal from '../ui/Reveal'
 import ProgramDialog from '../ProgramDialog'
+import SectionBackdrop from '../SectionBackdrop'
 
 export default function Programs() {
   return (
@@ -11,6 +12,7 @@ export default function Programs() {
       id="universities"
       aria-labelledby="programs-title"
     >
+      <SectionBackdrop variant="programs" />
       <div className="container">
         <Reveal className="section-heading">
           <div>
