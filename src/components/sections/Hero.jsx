@@ -79,7 +79,7 @@ export default function Hero() {
           <ArrowDown size={18} />
         </a>
         <span>
-          01 <i>/</i> 04
+          01 <i>/</i> 06
         </span>
       </div>
     </section>

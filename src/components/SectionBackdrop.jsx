@@ -1,9 +1,10 @@
-import { BookOpen, GraduationCap, Plane } from 'lucide-react'
+import { BookOpen, GraduationCap, MessagesSquare, Plane } from 'lucide-react'
 
 const symbols = {
   hero: Plane,
   programs: BookOpen,
   journey: Plane,
+  faq: MessagesSquare,
   consultation: GraduationCap,
 }
 

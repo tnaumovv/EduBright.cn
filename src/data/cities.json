@@ -1,0 +1,86 @@
+[
+  {
+    "id": "shanghai",
+    "name": "Шанхай",
+    "han": "上海",
+    "image": "/assets/china/shanghai.jpg",
+    "alt": "Небоскрёбы Пудуна и телебашня в ночном Шанхае"
+  },
+  {
+    "id": "beijing",
+    "name": "Пекин",
+    "han": "北京",
+    "image": "/assets/china/beijing.jpg",
+    "alt": "Золотые крыши и красные стены Запретного города в Пекине",
+    "source": "https://unsplash.com/photos/Uk19VsygF9Y",
+    "author": "Peter Zhou",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "position": "65% 50%"
+  },
+  {
+    "id": "chongqing",
+    "name": "Чунцин",
+    "han": "重庆",
+    "image": "/assets/china/chongqing.jpg",
+    "alt": "Дневная панорама Чунцина, реки и небоскрёбы комплекса Raffles City",
+    "source": "https://unsplash.com/photos/VN3e9wXGXLY",
+    "author": "Zongnan Bao",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "position": "65% 50%"
+  },
+  {
+    "id": "guangzhou",
+    "name": "Гуанчжоу",
+    "han": "广州",
+    "image": "/assets/china/guangzhou.jpg",
+    "alt": "Телебашня Гуанчжоу на фоне синего неба и зелёных деревьев",
+    "source": "https://unsplash.com/photos/8O_KZkOXa34",
+    "author": "c k",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "position": "60% 50%"
+  },
+  {
+    "id": "hangzhou",
+    "name": "Ханчжоу",
+    "han": "杭州",
+    "image": "/assets/china/hangzhou.jpg",
+    "alt": "Каменный мост с китайским павильоном и отражением на озере Сиху в Ханчжоу",
+    "source": "https://unsplash.com/photos/NQJBkCU9v6o",
+    "author": "Kounotori",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license"
+  },
+  {
+    "id": "shenzhen",
+    "name": "Шэньчжэнь",
+    "han": "深圳",
+    "image": "/assets/china/shenzhen.jpg",
+    "alt": "Зелёный парк и панорама Шэньчжэня в дневном свете",
+    "source": "https://commons.wikimedia.org/wiki/File:Shenzhen_Skyline_from_Meilin_Reservoir_Dam6.jpg",
+    "author": "Huangdan2060",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  {
+    "id": "chengdu",
+    "name": "Чэнду",
+    "han": "成都",
+    "image": "/assets/china/chengdu.jpg",
+    "alt": "Большая панда среди зелени в исследовательском центре Чэнду",
+    "source": "https://commons.wikimedia.org/wiki/File:Chengdu_Panda_Breeding_Research_Center,_Chengdu,_China_(Unsplash).jpg",
+    "author": "Chester Ho chesterho",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "position": "60% 50%"
+  },
+  {
+    "id": "night-street",
+    "name": "Улицы Китая",
+    "han": "中国",
+    "image": "/assets/china/night-street.jpg",
+    "alt": "Традиционная китайская улица с фонарями и отражениями на мокрой мостовой"
+  }
+]

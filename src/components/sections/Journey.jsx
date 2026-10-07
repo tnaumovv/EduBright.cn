@@ -65,6 +65,18 @@ export default function Journey() {
                   className="journey-panel"
                 >
                   <div className="journey-panel-inner">
+                    <div className="journey-detail">
+                      <h3>{item.title}</h3>
+                      <p>{item.description}</p>
+                      <ul>
+                        {item.details.map((text) => (
+                          <li key={text}>
+                            <Check size={18} aria-hidden="true" />
+                            {text}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                     <div className="journey-photo">
                       <img
                         src={item.image}
@@ -80,18 +92,6 @@ export default function Journey() {
                       <span className="journey-chapter" aria-hidden="true">
                         0{index + 1}
                       </span>
-                    </div>
-                    <div className="journey-detail">
-                      <h3>{item.title}</h3>
-                      <p>{item.description}</p>
-                      <ul>
-                        {item.details.map((text) => (
-                          <li key={text}>
-                            <Check size={15} aria-hidden="true" />
-                            {text}
-                          </li>
-                        ))}
-                      </ul>
                     </div>
                   </div>
                 </Tabs.Content>

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { motion } from 'motion/react'
 import * as Dialog from '@radix-ui/react-dialog'
 import { Menu, X } from 'lucide-react'
 import { navigation } from '../data/content'
@@ -28,6 +29,8 @@ export function Brand({ light = false }) {
 export default function Header() {
   const { compact, active } = useNavigationState()
   const [open, setOpen] = useState(false)
+  const [hovered, setHovered] = useState(null)
+  const highlighted = hovered || active
   return (
     <>
       <a className="skip-link" href="#main-content">
@@ -38,15 +41,29 @@ export default function Header() {
       >
         <div className="header-inner container">
           <Brand />
-          <nav className="desktop-nav" aria-label="Основная навигация">
+          <nav
+            className="desktop-nav"
+            aria-label="Основная навигация"
+            onMouseLeave={() => setHovered(null)}
+          >
             {navigation.map((item) => (
               <a
                 key={item.id}
                 href={`#${item.id}`}
                 aria-current={active === item.id ? 'location' : undefined}
+                onMouseEnter={() => setHovered(item.id)}
+                onFocus={() => setHovered(item.id)}
+                onBlur={() => setHovered(null)}
               >
-                {item.label}
-                <span className="nav-mark" />
+                {highlighted === item.id && (
+                  <motion.span
+                    className="nav-indicator"
+                    layoutId="navigation-indicator"
+                    transition={{ type: 'spring', stiffness: 420, damping: 36 }}
+                    aria-hidden="true"
+                  />
+                )}
+                <span className="nav-label">{item.label}</span>
               </a>
             ))}
           </nav>
