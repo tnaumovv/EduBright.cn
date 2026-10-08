@@ -22,17 +22,10 @@ export default function Hero() {
       <div className="hero-decoration" aria-hidden="true">
         <span className="hero-orbit hero-orbit--one" />
         <span className="hero-orbit hero-orbit--two" />
-        <span className="hero-dot" />
         <span className="hero-character">学</span>
       </div>
       <SectionBackdrop variant="hero" />
       <div className="container hero-content">
-        <Reveal className="hero-brandline">
-          <p className="eyebrow hero-eyebrow">
-            <span className="red-dot" />
-            EDUBRIGHT · STUDY IN CHINA
-          </p>
-        </Reveal>
         <Reveal delay={0.08}>
           <h1 id="hero-title">
             Образование в Китае.
@@ -85,9 +78,6 @@ export default function Hero() {
         >
           <ArrowDown size={18} />
         </a>
-        <span>
-          01 <i>/</i> 06
-        </span>
       </div>
     </section>
   )

@@ -4,8 +4,10 @@ import { faqCategories } from '../../data/content'
 import Button from '../ui/Button'
 import Reveal from '../ui/Reveal'
 import SectionBackdrop from '../SectionBackdrop'
+import useMobileTabScroll from '../../hooks/useMobileTabScroll'
 
 export default function FAQ() {
+  const scrollToPanel = useMobileTabScroll()
   return (
     <section
       className="screen-section faq"
@@ -28,22 +30,20 @@ export default function FAQ() {
                     key={category.id}
                     value={category.id}
                     className="faq-category"
+                    onClick={scrollToPanel}
                   >
                     {category.label}
                   </Tabs.Trigger>
                 ))}
               </Tabs.List>
             </div>
-            {faqCategories.map((category, index) => (
+            {faqCategories.map((category) => (
               <Tabs.Content
                 key={category.id}
                 value={category.id}
                 className="faq-panel"
               >
                 <div className="faq-category-summary">
-                  <span className="faq-category-index" aria-hidden="true">
-                    0{index + 1}
-                  </span>
                   <h3>{category.label}</h3>
                   <p>{category.description}</p>
                   <Button

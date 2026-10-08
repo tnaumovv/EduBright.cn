@@ -162,6 +162,7 @@ svg {
   isolation: isolate;
   min-height: 100svh;
   scroll-margin-top: 90px;
+  text-align: center;
 }
 
 .screen-section:not(.hero) {
@@ -594,6 +595,9 @@ svg {
 
 .button-label {
   display: inline-flex;
+  flex: 1;
+  justify-content: center;
+  text-align: center;
   gap: 9px;
   align-items: center;
   transition: transform 0.25s var(--ease);
@@ -738,27 +742,8 @@ svg {
   display: none;
 }
 
-.hero-eyebrow {
-  justify-content: center;
-  font-size: 13px;
-  letter-spacing: 0.16em;
-  margin-bottom: 28px;
-  color: var(--muted);
-}
-
-.hero-eyebrow::before {
-  display: none;
-}
-
-.red-dot {
-  width: 6px;
-  height: 6px;
-  background: var(--red);
-  border-radius: 50%;
-}
-
 .hero h1 {
-  font-size: clamp(46px, 5.8vw, 80px);
+  font-size: clamp(54px, 6.8vw, 94px);
   font-weight: 600;
   letter-spacing: -0.055em;
   line-height: 1.08;
@@ -772,7 +757,7 @@ svg {
   max-width: 760px;
   margin: 32px auto 0;
   color: var(--muted);
-  font-size: 18px;
+  font-size: 21px;
   line-height: 1.65;
 }
 
@@ -781,8 +766,20 @@ svg {
   gap: 14px;
   align-items: center;
   justify-content: center;
-  margin-top: 29px;
+  margin: 29px auto 0;
   max-width: none;
+}
+
+.hero-actions .button {
+  min-height: 60px;
+  padding: 10px 12px 10px 26px;
+  font-size: 18px;
+  gap: 18px;
+}
+
+.hero-actions .button-arrow {
+  width: 38px;
+  height: 38px;
 }
 
 .hero-topics {
@@ -839,17 +836,6 @@ svg {
   height: 360px;
 }
 
-.hero-dot {
-  position: absolute;
-  right: 11%;
-  top: 23%;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: var(--red);
-  box-shadow: 0 0 0 15px #d91e2e08;
-}
-
 .hero-character {
   position: absolute;
   right: -25px;
@@ -861,7 +847,9 @@ svg {
 
 .hero-bottom {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: center;
   align-items: center;
   position: absolute;
   bottom: 26px;
@@ -869,12 +857,6 @@ svg {
   right: 0;
   color: var(--muted);
   font-size: 13px;
-}
-
-.hero-bottom i {
-  margin-inline: 6px;
-  font-style: normal;
-  opacity: 0.5;
 }
 
 .scroll-cue {
@@ -1038,12 +1020,7 @@ svg {
   display: flex;
   gap: 14px;
   align-items: flex-start;
-}
-
-.path-index {
-  color: var(--red);
-  font-size: 14px;
-  padding-top: 2px;
+  justify-content: center;
 }
 
 .university-paths h3 {
@@ -1089,11 +1066,12 @@ svg {
 
 .journey-step {
   display: flex;
+  justify-content: flex-start;
   align-items: center;
   gap: 14px;
   text-align: left;
   position: relative;
-  padding: 18px 12px 18px 0;
+  padding: 18px 0;
   background: transparent;
   color: var(--muted);
   border-radius: 13px;
@@ -1102,21 +1080,37 @@ svg {
 }
 
 .step-number {
-  width: 48px;
-  height: 48px;
   display: grid;
   place-items: center;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
   border: 1px solid #cbd3de;
   border-radius: 50%;
   background: var(--soft);
-  font-family: var(--display);
-  font-size: 15px;
   color: var(--muted);
-  transition: background 0.3s,
-    border-color 0.3s,
-    color 0.3s;
-  z-index: 1;
+  font-size: 16px;
+  position: relative;
+  transition: background 0.25s, color 0.25s, border-color 0.25s;
+}
+
+.step-arrow {
+  margin-left: auto;
   flex-shrink: 0;
+  opacity: 0;
+  color: var(--navy);
+  transition: opacity 0.25s;
+}
+
+.journey-step[data-state='active'] .step-number {
+  background: var(--red);
+  border-color: var(--red);
+  color: white;
+  box-shadow: 0 0 0 6px #d91e2e09;
+}
+
+.journey-step[data-state='active'] .step-arrow {
+  opacity: 1;
 }
 
 .step-name {
@@ -1139,25 +1133,13 @@ svg {
   line-height: 1.5;
 }
 
-.step-arrow {
-  margin-left: auto;
-  color: var(--navy);
-  opacity: 0;
-  transform: translate(-4px, 4px);
-  transition: opacity 0.3s,
-    transform 0.3s;
+.journey-step[data-state='active'] {
+  background: transparent;
 }
 
-.journey-step[data-state='active'] .step-number {
-  background: var(--red);
-  border-color: var(--red);
-  color: white;
-  box-shadow: 0 0 0 6px #d91e2e09;
-}
-
-.journey-step[data-state='active'] .step-arrow {
-  opacity: 1;
-  transform: none;
+.journey-panel,
+.faq-panel {
+  scroll-margin-top: 110px;
 }
 
 .journey-step:hover {
@@ -1207,25 +1189,15 @@ svg {
 .journey-photo-tag {
   position: absolute;
   bottom: 22px;
-  left: 27px;
+  left: 20px;
+  right: 20px;
+  justify-content: center;
   z-index: 1;
   display: flex;
   align-items: center;
   gap: 8px;
   color: white;
   font-size: 15px;
-}
-
-.journey-chapter {
-  position: absolute;
-  bottom: 6px;
-  right: 22px;
-  color: #ffffff6b;
-  font-size: 60px;
-  line-height: 1;
-  font-family: var(--display);
-  letter-spacing: -0.07em;
-  z-index: 1;
 }
 
 .journey-detail {
@@ -1250,6 +1222,7 @@ svg {
 
 .journey-detail ul {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 9px 18px;
   list-style: none;
@@ -1259,6 +1232,7 @@ svg {
 
 .journey-detail li {
   display: flex;
+  justify-content: center;
   align-items: flex-start;
   gap: 6px;
   font-size: 15px;
@@ -1364,14 +1338,6 @@ svg {
   padding-top: 7px;
 }
 
-.faq-category-index {
-  display: block;
-  margin-bottom: 12px;
-  color: var(--coral);
-  font-size: 14px;
-  letter-spacing: 0.12em;
-}
-
 .faq-category-summary h3 {
   font-size: clamp(24px, 2.5vw, 32px);
   font-weight: 500;
@@ -1381,7 +1347,7 @@ svg {
 
 .faq-category-summary > p {
   max-width: 320px;
-  margin-top: 12px;
+  margin: 12px auto 0;
   font-size: 16px;
   line-height: 1.75;
   color: #b7c5d7;
@@ -1424,19 +1390,24 @@ svg {
 
 .faq-question {
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
   width: 100%;
   min-height: 64px;
-  padding: 18px 0;
+  padding: 18px 32px;
   background: transparent;
   color: white;
   font-size: 17px;
   font-weight: 500;
   line-height: 1.5;
-  text-align: left;
+  text-align: center;
   transition: color 0.2s;
+}
+
+.faq-question > span:first-child {
+  width: 100%;
 }
 
 .faq-question:hover,
@@ -1450,7 +1421,8 @@ svg {
 }
 
 .faq-toggle {
-  position: relative;
+  position: absolute;
+  right: 0;
   flex-shrink: 0;
   width: 18px;
   height: 18px;
@@ -1483,7 +1455,7 @@ svg {
 }
 
 .faq-answer > p {
-  padding: 0 32px 22px 0;
+  padding: 0 32px 22px;
   color: #b7c5d7;
   font-size: 16px;
   line-height: 1.75;
@@ -1582,10 +1554,10 @@ svg {
     padding-block: 18px;
     font-size: 17px;
     min-height: 64px;
-    padding: 18px 0;
+    padding: 18px 32px;
   }
   .faq-answer > p {
-    padding-right: 0;
+    padding-inline: 0;
     padding-bottom: 20px;
     font-size: 16px;
     line-height: 1.75;
@@ -1699,7 +1671,10 @@ svg {
 .conversation-tag {
   position: absolute;
   bottom: -10px;
-  left: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: 100%;
   background: white;
   color: var(--navy);
   display: flex;
@@ -1714,10 +1689,6 @@ svg {
 
 .conversation-tag > svg:first-child {
   color: var(--red);
-}
-
-.conversation-tag > svg:last-child {
-  margin-left: 10px;
 }
 
 .conversation-tag strong {
@@ -1803,6 +1774,7 @@ svg {
   display: block;
   width: 100%;
   color: var(--navy);
+  text-align: center;
   background: #f7f8fa;
   border: 1px solid var(--line);
   border-radius: 10px;
@@ -1851,6 +1823,13 @@ svg {
 .submit-button {
   width: 100%;
   margin-top: 3px;
+  position: relative;
+  padding-inline: 48px;
+}
+
+.submit-button .button-arrow {
+  position: absolute;
+  right: 8px;
 }
 
 .form-note {
@@ -1858,6 +1837,7 @@ svg {
   line-height: 1.6;
   color: var(--muted);
   display: flex;
+  justify-content: center;
   align-items: flex-start;
   gap: 6px;
   margin-top: 14px;
@@ -1976,7 +1956,7 @@ svg {
 }
 
 .instagram-link > span:nth-child(2) {
-  text-align: left;
+  text-align: center;
 }
 
 .instagram-link small {
@@ -2398,7 +2378,7 @@ svg {
     padding-bottom: 110px;
   }
   .hero h1 {
-    font-size: clamp(46px, 5.8vw, 80px);
+    font-size: clamp(54px, 6.8vw, 94px);
     font-weight: 600;
     letter-spacing: -0.055em;
   }
@@ -2457,10 +2437,7 @@ svg {
   }
   .journey-step {
     gap: 14px;
-    padding: 18px 12px 18px 0;
-  }
-  .step-arrow {
-    display: none;
+    padding: 18px 0;
   }
   .journey-detail {
     padding: 28px 30px;
@@ -2565,7 +2542,7 @@ svg {
     padding-bottom: 108px;
   }
   .hero h1 {
-    font-size: clamp(46px, 5.8vw, 80px);
+    font-size: clamp(54px, 6.8vw, 94px);
     line-height: 1.12;
     letter-spacing: -0.055em;
     text-wrap: balance;
@@ -2577,10 +2554,6 @@ svg {
   .hero h1 span {
     display: block;
     margin-top: 7px;
-  }
-  .hero-eyebrow {
-    margin-bottom: 26px;
-    font-size: 13px;
   }
   .hero-lead {
     font-size: 18px;
@@ -2630,13 +2603,6 @@ svg {
   .hero-bottom > span:first-child {
     max-width: 110px;
     line-height: 1.5;
-  }
-  .hero-dot {
-    right: 8%;
-    top: 19%;
-    width: 8px;
-    height: 8px;
-    box-shadow: 0 0 0 10px #d91e2e08;
   }
   .hero-character {
     font-size: 170px;
@@ -2716,7 +2682,7 @@ svg {
     align-items: center;
   }
   .journey-step {
-    padding: 18px 12px 18px 0;
+    padding: 18px 0;
     gap: 14px;
   }
   .step-name strong {
@@ -2726,9 +2692,6 @@ svg {
   .step-name small {
     font-size: 15px;
     line-height: 1.5;
-  }
-  .step-arrow {
-    display: block;
   }
   .journey-photo {
     height: 290px;
@@ -2982,6 +2945,102 @@ svg {
   }
 }
 
+/* University wordmarks follow the hero in a continuous, quiet strip. */
+
+.university-band {
+  padding: 44px 0 40px;
+  background: var(--surface);
+  text-align: center;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+}
+
+.university-band h2 {
+  font-family: var(--body);
+  color: var(--muted);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.university-marquee {
+  margin-top: 30px;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
+}
+
+.university-track {
+  display: flex;
+  width: max-content;
+  animation: china-scroll 48s linear infinite;
+}
+
+.university-list {
+  display: flex;
+  flex-shrink: 0;
+  min-width: 100vw;
+  justify-content: space-around;
+  gap: 56px;
+  list-style: none;
+  padding: 0 56px 0 0;
+  margin: 0;
+}
+
+.university-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  width: 240px;
+}
+
+.university-logo img {
+  width: 100%;
+  height: 64px;
+  object-fit: contain;
+  filter: brightness(0);
+  opacity: 0.8;
+}
+
+.university-logo span {
+  max-width: 230px;
+  min-height: 40px;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.university-logo--cuz img,
+.university-logo--zstu img {
+  filter: grayscale(1);
+}
+
+.university-logo--zstu img {
+  height: 80px;
+}
+
+.university-marquee:focus-visible .university-track {
+  animation-play-state: paused;
+}
+
+/* A student portrait and a clear admission result, using the supplied case. */
+
+@media (max-width: 720px) {
+  .university-band { padding: 32px 0; }
+  .university-band h2 { font-size: 13px; line-height: 1.6; }
+  .university-list { gap: 32px; padding-right: 32px; }
+  .university-logo { width: 200px; }
+  .university-logo img { height: 54px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .university-marquee { overflow-x: auto; mask-image: none; }
+  .university-track { animation: none; }
+  .university-list[aria-hidden='true'] { display: none; }
+}
+
 /* Reference navigation: glass capsule with a shared, sliding active pill. */
 
 .nav-indicator {
@@ -3055,7 +3114,7 @@ svg {
   --photo-height: calc(var(--photo-width) * 1.3125);
   --photo-gap: 32px;
   position: relative;
-  width: min(1160px, calc(100% - 64px));
+  width: 100%;
   margin: 28px auto 0;
   padding-block: 12px 24px;
   overflow: hidden;
@@ -3083,8 +3142,7 @@ svg {
   padding: 0 var(--photo-gap) 0 0;
 }
 
-/* Hover and keyboard focus pause the entire strip without closing the gaps. */
-.gallery-stage:has(.city-card:hover) .city-track,
+/* Keyboard focus provides an accessible way to pause the strip. */
 .gallery-stage:focus-visible .city-track {
   animation-play-state: paused;
 }
@@ -3124,7 +3182,7 @@ svg {
   right: 12px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 8px;
   color: white;
   font-size: 18px;
@@ -3206,21 +3264,13 @@ svg {
     gap: 36px;
   }
   .journey-steps {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-  .journey-steps::before {
-    display: none;
+    display: flex;
+    width: 100%;
+    max-width: 520px;
+    margin-inline: auto;
   }
   .journey-step {
-    padding: 16px;
-    border: 1px solid #cbd3de;
-    border-radius: 20px;
-  }
-  .journey-step[data-state='active'] {
-    background: #ffffffa8;
-    border-color: #d91e2e40;
+    padding: 18px 0;
   }
   .journey-photo {
     height: 290px;
@@ -3281,18 +3331,22 @@ svg {
     padding: 124px 0 88px;
   }
   .hero h1 {
-    font-size: clamp(34px, 8vw, 48px);
-    line-height: 1.15;
+    font-size: clamp(42px, 10.5vw, 66px);
+    line-height: 1.08;
     letter-spacing: -0.06em;
   }
   .hero-lead {
-    font-size: 16px;
-    line-height: 1.5;
-    max-width: 300px;
-    margin-top: 20px;
+    font-size: 19px;
+    line-height: 1.6;
+    max-width: 360px;
+    margin-top: 24px;
   }
-  .hero-brandline,
-  .hero h1 .hero-tagline,
+  .hero h1 .hero-tagline {
+    display: block;
+    font-size: 0.72em;
+    margin-top: 14px;
+    line-height: 1.15;
+  }
   .hero-desktop-copy,
   .hero-topics,
   .hero-bottom > span {
@@ -3302,19 +3356,20 @@ svg {
     display: inline;
   }
   .hero-actions {
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
-    max-width: 350px;
-    gap: 8px;
-    margin-top: 24px;
+    max-width: 360px;
+    gap: 12px;
+    margin-top: 28px;
   }
   .hero-actions .button {
-    flex: 1;
+    flex: auto;
+    width: 100%;
     min-width: 0;
-    min-height: 44px;
+    min-height: 58px;
     justify-content: center;
-    padding: 10px 12px;
-    font-size: 13px;
+    padding: 14px 20px;
+    font-size: 18px;
     white-space: nowrap;
   }
   .hero-actions .button-arrow {
@@ -3359,22 +3414,18 @@ svg {
     font-size: 15px;
   }
   .journey-steps {
-    grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 0;
   }
   .journey-step {
-    min-height: 84px;
-    padding: 14px;
+    min-height: 100px;
+    padding: 16px 0;
+    gap: 14px;
   }
   .step-name strong {
     font-size: 18px;
   }
   .step-name small {
     font-size: 15px;
-  }
-  .step-number {
-    width: 48px;
-    height: 48px;
   }
   .journey-panel-inner {
     border-radius: 24px;
@@ -3399,12 +3450,8 @@ svg {
     left: 20px;
     bottom: 20px;
     font-size: 14px;
-    max-width: calc(100% - 95px);
+    max-width: none;
     line-height: 1.4;
-  }
-  .journey-chapter {
-    font-size: 54px;
-    right: 18px;
   }
   .china-gallery {
     padding-bottom: 54px;
@@ -3422,7 +3469,7 @@ svg {
   .gallery-stage {
     --photo-width: 160px;
     --photo-gap: 20px;
-    width: calc(100% - 40px);
+    width: 100%;
     margin-top: 18px;
   }
   .city-card {
@@ -3549,7 +3596,7 @@ svg {
 }
 
 @media (max-width: 380px) {
-  .hero h1 { font-size: 30px; }
+  .hero h1 { font-size: 40px; }
   .site-header .header-inner { padding-inline: 12px; gap: 8px; }
   .brand-word, .site-header--compact .brand-word { font-size: 19px; }
   .brand-symbol { width: 33px; height: 41px; }

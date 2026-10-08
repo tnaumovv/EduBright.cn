@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import * as Tabs from '@radix-ui/react-tabs'
 import { ArrowUpRight, Check } from 'lucide-react'
+import useMobileTabScroll from '../../hooks/useMobileTabScroll'
 import { journeySteps } from '../../data/content'
 import Reveal from '../ui/Reveal'
 import SectionBackdrop from '../SectionBackdrop'
 
 export default function Journey() {
   const [step, setStep] = useState(journeySteps[0].id)
+  const scrollToPanel = useMobileTabScroll()
   return (
     <section
       className="screen-section journey"
@@ -43,22 +45,19 @@ export default function Journey() {
                   key={item.id}
                   value={item.id}
                   className="journey-step"
+                  onClick={scrollToPanel}
                 >
-                  <span className="step-number">0{index + 1}</span>
+                  <span className="step-number" aria-hidden="true">0{index + 1}</span>
                   <span className="step-name">
                     <strong>{item.label}</strong>
                     <small>{item.subtitle}</small>
                   </span>
-                  <ArrowUpRight
-                    size={18}
-                    className="step-arrow"
-                    aria-hidden="true"
-                  />
+                  <ArrowUpRight className="step-arrow" size={18} aria-hidden="true" />
                 </Tabs.Trigger>
               ))}
             </Tabs.List>
             <div className="journey-panels">
-              {journeySteps.map((item, index) => (
+              {journeySteps.map((item) => (
                 <Tabs.Content
                   key={item.id}
                   value={item.id}
@@ -88,9 +87,6 @@ export default function Journey() {
                       <span className="journey-photo-tag">
                         <item.icon size={17} aria-hidden="true" />
                         {item.tag}
-                      </span>
-                      <span className="journey-chapter" aria-hidden="true">
-                        0{index + 1}
                       </span>
                     </div>
                   </div>

@@ -8,6 +8,7 @@ import ChinaGallery from './components/sections/ChinaGallery'
 import FAQ from './components/sections/FAQ'
 import Consultation from './components/sections/Consultation'
 import Footer from './components/Footer'
+import Universities from './components/sections/Universities'
 import StudentStory from './components/sections/StudentStory'
 
 export default function App() {
@@ -21,6 +22,7 @@ export default function App() {
       <Header />
       <main id="main-content">
         <Hero />
+        <Universities />
         <Programs />
         <ChinaGallery />
         <Journey />

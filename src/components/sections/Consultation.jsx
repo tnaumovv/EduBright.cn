@@ -1,4 +1,4 @@
-import { ArrowUpRight, MessagesSquare, GraduationCap } from 'lucide-react'
+import { MessagesSquare, GraduationCap } from 'lucide-react'
 import ConsultationForm from '../ConsultationForm'
 import Reveal from '../ui/Reveal'
 import SectionBackdrop from '../SectionBackdrop'
@@ -60,7 +60,6 @@ export default function Consultation() {
                 <br />
                 <strong>Наша поддержка.</strong>
               </span>
-              <ArrowUpRight size={18} />
             </div>
           </Reveal>
         </div>

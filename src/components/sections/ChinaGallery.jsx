@@ -15,7 +15,7 @@ export default function ChinaGallery() {
           </p>
         </Reveal>
       </div>
-      <div className="gallery-stage" tabIndex={0} aria-label="Фотографии Китая. Наведите на фото, чтобы остановить движение.">
+      <div className="gallery-stage" tabIndex={0} aria-label="Фотографии Китая. Фокус на галерее приостанавливает движение.">
         <div className="city-track">
           {[0, 1].map((group) => (
             <ul className="city-strip" key={group} aria-label={group === 0 ? 'Восемь фотографий Китая' : undefined} aria-hidden={group === 1 ? true : undefined}>

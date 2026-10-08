@@ -66,9 +66,8 @@ export default function Programs() {
           })}
         </div>
         <Reveal className="university-paths" delay={0.18}>
-          {universityPaths.map((path, index) => (
+          {universityPaths.map((path) => (
             <div key={path.title}>
-              <span className="path-index">0{index + 1}</span>
               <div>
                 <h3>{path.title}</h3>
                 <p>{path.text}</p>
