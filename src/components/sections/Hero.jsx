@@ -27,7 +27,7 @@ export default function Hero() {
       </div>
       <SectionBackdrop variant="hero" />
       <div className="container hero-content">
-        <Reveal>
+        <Reveal className="hero-brandline">
           <p className="eyebrow hero-eyebrow">
             <span className="red-dot" />
             EDUBRIGHT · STUDY IN CHINA
@@ -37,20 +37,27 @@ export default function Hero() {
           <h1 id="hero-title">
             Образование в Китае.
             <br />
-            <span>Будущее без границ.</span>
+            <span className="hero-tagline">Будущее без границ.</span>
           </h1>
         </Reveal>
         <Reveal delay={0.16}>
           <p className="hero-lead">
-            Подберём университет и программу, поможем с документами и будем
-            рядом на пути к вашей цели.
+            <span className="hero-desktop-copy">
+              Подберём университет и программу, поможем с документами и будем
+              рядом на пути к вашей цели.
+            </span>
+            <span className="hero-mobile-copy">
+              Подбор университета и помощь с поступлением.
+            </span>
           </p>
           <div className="hero-actions">
             <Button as="a" href="#consultation">
-              Получить консультацию
+              <span className="hero-desktop-copy">Получить консультацию</span>
+              <span className="hero-mobile-copy">Консультация</span>
             </Button>
             <Button as="a" href="#universities" variant="outline">
-              Выбрать направление
+              <span className="hero-desktop-copy">Выбрать направление</span>
+              <span className="hero-mobile-copy">Программы</span>
             </Button>
           </div>
         </Reveal>

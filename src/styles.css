@@ -734,6 +734,10 @@ svg {
   z-index: 1;
 }
 
+.hero-mobile-copy {
+  display: none;
+}
+
 .hero-eyebrow {
   justify-content: center;
   font-size: 13px;
@@ -3282,37 +3286,42 @@ svg {
     letter-spacing: -0.06em;
   }
   .hero-lead {
-    font-size: 17px;
-    line-height: 1.65;
-    max-width: 490px;
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 300px;
+    margin-top: 20px;
   }
-  .hero-eyebrow {
-    font-size: 12px;
-    letter-spacing: 0.1em;
+  .hero-brandline,
+  .hero h1 .hero-tagline,
+  .hero-desktop-copy,
+  .hero-topics,
+  .hero-bottom > span {
+    display: none;
+  }
+  .hero-mobile-copy {
+    display: inline;
   }
   .hero-actions {
+    flex-direction: row;
     width: 100%;
     max-width: 350px;
-    margin-top: 28px;
+    gap: 8px;
+    margin-top: 24px;
   }
   .hero-actions .button {
-    width: 100%;
+    flex: 1;
+    min-width: 0;
+    min-height: 44px;
+    justify-content: center;
+    padding: 10px 12px;
+    font-size: 13px;
+    white-space: nowrap;
   }
-  .hero-topics {
-    gap: 14px 18px;
-    font-size: 14px;
-    line-height: 1.5;
-  }
-  .hero-topics > span + span {
-    padding-left: 0;
-    border: 0;
-  }
-  .hero-topics svg {
-    width: 20px;
-    height: 20px;
+  .hero-actions .button-arrow {
+    display: none;
   }
   .hero-bottom {
-    font-size: 12px;
+    justify-content: center;
   }
   .section-heading h2, .faq-top h2 {
     font-size: clamp(28px, 7vw, 34px);
