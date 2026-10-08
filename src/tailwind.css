@@ -1,0 +1,19 @@
+/* Keep the existing site's reset; generate utilities for the typed UI components. */
+@layer theme;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" source(none);
+@source "./components/ui/**/*.tsx";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--navy);
+  --color-card: var(--surface);
+  --color-card-foreground: var(--navy);
+  --color-primary: var(--red);
+  --color-primary-foreground: #fff;
+  --color-muted: var(--soft);
+  --color-muted-foreground: var(--muted);
+  --color-border: var(--line);
+  --color-input: var(--line);
+  --color-ring: var(--focus);
+}

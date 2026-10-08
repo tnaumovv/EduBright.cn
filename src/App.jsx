@@ -8,6 +8,7 @@ import ChinaGallery from './components/sections/ChinaGallery'
 import FAQ from './components/sections/FAQ'
 import Consultation from './components/sections/Consultation'
 import Footer from './components/Footer'
+import StudentStory from './components/sections/StudentStory'
 
 export default function App() {
   useEffect(() => {
@@ -23,6 +24,7 @@ export default function App() {
         <Programs />
         <ChinaGallery />
         <Journey />
+        <StudentStory />
         <FAQ />
         <Consultation />
       </main>

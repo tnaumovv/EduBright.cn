@@ -1,0 +1,6 @@
+.student-story { background: var(--background); }
+.student-story .section-heading { margin-bottom: 70px; }
+.student-story .eyebrow { margin-bottom: 0; }
+@media (max-width: 720px) {
+  .student-story .section-heading { margin-bottom: 30px; }
+}
