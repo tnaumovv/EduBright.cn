@@ -16,10 +16,10 @@ const students = [
     universityLogoHeight: 77,
   },
   {
-    name: 'Наталья',
+    name: 'Шалнева Наталья',
     designation: 'Поступила в университет · Китай',
     src: '/assets/natalia-zufe.jpg',
-    imageAlt: 'Наталья с письмом о зачислении в Zhejiang University of Finance and Economics',
+    imageAlt: 'Шалнева Наталья с письмом о зачислении в Zhejiang University of Finance and Economics',
     imageWidth: 608,
     imageHeight: 1080,
     university: 'Zhejiang University of Finance and Economics',
