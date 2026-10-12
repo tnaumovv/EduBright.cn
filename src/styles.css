@@ -363,13 +363,6 @@ svg {
   line-height: 1.5;
 }
 
-.eyebrow::before {
-  content: '';
-  width: 25px;
-  height: 1px;
-  background: currentColor;
-}
-
 .section-heading {
   display: flex;
   flex-direction: column;

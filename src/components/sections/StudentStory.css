@@ -1,6 +1,13 @@
 .student-story { background: var(--background); }
 .student-story .section-heading { margin-bottom: 70px; }
-.student-story .eyebrow { margin-bottom: 0; }
+.student-story .section-heading .eyebrow {
+  margin-bottom: 0;
+  font-family: var(--body);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+}
 @media (max-width: 720px) {
   .student-story .section-heading { margin-bottom: 30px; }
 }
